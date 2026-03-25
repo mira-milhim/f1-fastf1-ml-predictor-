@@ -31,12 +31,24 @@ def main():
     year = int(input("📅 Enter year: ").strip())
     round_number = int(input("🏎️ Enter round number: ").strip())
 
-    # Load qualifying session
-    quali = fastf1.get_session(year, round_number, "Q")
-    quali.load()
+    # Load qualifying session safely
+    try:
+        quali = fastf1.get_session(year, round_number, "Q")
+        quali.load()
+    except Exception as e:
+        print("\n❌ Qualifying data is not available yet for this race.")
+        print("⏳ Run this script after qualifying has finished and FastF1 has the data.")
+        print(f"🔍 Details: {e}\n")
+        return
+
+    # Check results exist
+    quali_results = quali.results.copy()
+    if quali_results.empty:
+        print("\n❌ Qualifying results are empty.")
+        print("⏳ Run this script after qualifying data becomes available.\n")
+        return
 
     event_name = quali.event["EventName"]
-    quali_results = quali.results.copy()
 
     rows = []
 
@@ -84,7 +96,6 @@ def main():
     pred_df = pred_df.sort_values("predicted_finish").reset_index(drop=True)
     pred_df["predicted_rank"] = pred_df.index + 1
 
-    # ===== PRINT RESULTS WITH EMOJIS =====
     print(f"\n🏁 Predicted Results for {event_name} {year} 🏁\n")
 
     for _, row in pred_df.iterrows():
@@ -106,9 +117,7 @@ def main():
 
         print(f"{emoji} P{rank:02d} | {driver} ({team}) → {score}")
 
-    # ===== PODIUM =====
     print("\n🏆 Expected Podium 🏆\n")
-
     medals = ["🥇", "🥈", "🥉"]
 
     for i, (_, row) in enumerate(pred_df.head(3).iterrows()):
@@ -118,7 +127,7 @@ def main():
 
     print("\n⚡ Model Insight: Lower score = better expected finish\n")
 
-    # ===== SAVE TO CSV =====
+    # Save prediction
     Path("data/predictions").mkdir(parents=True, exist_ok=True)
     filename = f"data/predictions/{year}_{round_number}_{event_name.replace(' ', '_')}_prediction.csv"
     pred_df.to_csv(filename, index=False)

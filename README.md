@@ -57,6 +57,10 @@ python src/predict_race.py
 
 ## 🔁 Weekly workflow
 
+Before qualifying:
+
+Race prediction is not available yet in the current version, because the model uses qualifying results as an input.
+
 After qualifying:
 
 python src/predict_race.py
