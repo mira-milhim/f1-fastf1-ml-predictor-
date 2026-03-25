@@ -1,6 +1,3 @@
-# f1-fastf1-ml-predictor-
-F1 race prediction model using FastF1, pandas, and machine learning to predict race results based on qualifying and historical performance.
-
 # 🏎️ F1 Race Predictor (FastF1 + Machine Learning)
 
 This project predicts Formula 1 race results using historical race data and qualifying results.
@@ -19,7 +16,19 @@ Built with:
 - Outputs podium + full ranking
 - Saves predictions as CSV
 
+## 📊 Features Used
 
+- Qualifying position
+- Driver Recent performance
+- Team Recent performance
+- Circuit history
+- Points and reliability
+
+## 🧠 Model
+
+- GradientBoostingRegressor
+- BPredicts finishing position
+- Ranks drivers by predicted score
 
 ## 📁 Project Structure
 
@@ -75,18 +84,4 @@ python src/fetch_data.py
 python src/build_dataset.py
 python src/train_model.py
 
-## 📊 Features Used
-
-- 🏁 Qualifying position  
-- 📈 Driver recent performance (last 3–5 races)  
-- 🏎️ Team recent performance  
-- 🗺️ Circuit historical performance  
-- 🎯 Points & reliability (DNFs)  
-
----
-
-## 🧠 Model
-
-- 🤖 **GradientBoostingRegressor** (scikit-learn)  
-- 📉 Predicts finishing position (regression task)  
-- 🏆 Drivers ranked based on predicted score  
+ 
