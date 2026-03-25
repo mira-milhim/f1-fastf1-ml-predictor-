@@ -30,6 +30,39 @@ Built with:
 - BPredicts finishing position
 - Ranks drivers by predicted score
 
+## ⚙️ Installation
+git clone https://github.com/mira-milhim/f1-fastf1-ml-predictor-.git
+cd f1-fastf1-ml-predictor-
+
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+
+## ▶️ Usage
+Fetch data
+python src/fetch_data.py
+
+Build dataset
+python src/build_dataset.py
+
+Train model
+python src/train_model.py
+
+Predict a race
+python src/predict_race.py
+
+## 🔁 Weekly workflow
+
+After qualifying:
+
+python src/predict_race.py
+
+After race:
+
+python src/fetch_data.py
+python src/build_dataset.py
+python src/train_model.py
+
 ## 📁 Project Structure
 
 ```text
@@ -53,36 +86,3 @@ f1_predictor/
 │
 ├── requirements.txt
 └── README.md
-
-## ⚙️ Installation
-```text
-git clone hhtps://github.com/mira-milhim-f1-fastf1-ml-predictor-.git
-cd f1-fastf1-ml-predictor-
-
-python -m venv .venv
--venv\Scripts\activate
-pip install -r requirements.txt
-
-
-▶️ Usage
-```text
-Fetch data
-python src/fetch_data.py
-Build dataset
-python src/build_dataset.py
-Train model
-python src/train_model.py
-Predict a race
-python src/predict_race.py
-
-🔁 Weekly workflow
-```text
-After qualifying:
-
-python src/predict_race.py
-
-After race:
-
-python src/fetch_data.py
-python src/build_dataset.py
-python src/train_model.py
