@@ -40,12 +40,19 @@ pip install -r requirements.txt
 
 ## ▶️ Usage
 Fetch data:
+
 python src/fetch_data.py
+
 Build dataset:
+
 python src/build_dataset.py
+
 Train model:
+
 python src/train_model.py
+
 Predict a race:
+
 python src/predict_race.py
 
 ## 🔁 Weekly workflow
