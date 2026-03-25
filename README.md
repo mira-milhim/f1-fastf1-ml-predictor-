@@ -19,6 +19,8 @@ Built with:
 - Outputs podium + full ranking
 - Saves predictions as CSV
 
+
+
 ## 📁 Project Structure
 
 ```text
@@ -60,6 +62,7 @@ Train model
 python src/train_model.py
 Predict a race
 python src/predict_race.py
+
 🔁 Weekly workflow
 
 After qualifying:
@@ -71,9 +74,19 @@ After race:
 python src/fetch_data.py
 python src/build_dataset.py
 python src/train_model.py
-📊 Features used
-Qualifying position
-Driver recent performance
-Team recent performance
-Circuit history
-Points and reliability
+
+## 📊 Features Used
+
+- 🏁 Qualifying position  
+- 📈 Driver recent performance (last 3–5 races)  
+- 🏎️ Team recent performance  
+- 🗺️ Circuit historical performance  
+- 🎯 Points & reliability (DNFs)  
+
+---
+
+## 🧠 Model
+
+- 🤖 **GradientBoostingRegressor** (scikit-learn)  
+- 📉 Predicts finishing position (regression task)  
+- 🏆 Drivers ranked based on predicted score  
