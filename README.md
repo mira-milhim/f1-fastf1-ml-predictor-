@@ -99,3 +99,12 @@ f1_predictor/
 │
 ├── requirements.txt
 └── README.md
+
+⚙️ Installation
+git clone https://github.com/mira-milhim/f1-fastf1-ml-predictor-.git
+cd f1-fastf1-ml-predictor-
+
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+
