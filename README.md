@@ -54,7 +54,9 @@ f1_predictor/
 ├── requirements.txt
 └── README.md
 
-⚙️ Installation
+## ⚙️ Installation
+
+```bash
 git clone https://github.com/mira-milhim/f1-fastf1-ml-predictor-.git
 cd f1-fastf1-ml-predictor-
 
