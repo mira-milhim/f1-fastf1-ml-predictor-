@@ -27,7 +27,7 @@ Built with:
 ## 🧠 Model
 
 - GradientBoostingRegressor
-- BPredicts finishing position
+- Predicts finishing position
 - Ranks drivers by predicted score
 
 ## ⚙️ Installation
