@@ -55,16 +55,17 @@ f1_predictor/
 └── README.md
 
 ## ⚙️ Installation
-
-```bash
-git clone https://github.com/mira-milhim/f1-fastf1-ml-predictor-.git
+```text
+git clone hhtps://github.com/mira-milhim-f1-fastf1-ml-predictor-.git
 cd f1-fastf1-ml-predictor-
 
 python -m venv .venv
-.venv\Scripts\activate
+-venv\Scripts\activate
 pip install -r requirements.txt
 
+
 ▶️ Usage
+```text
 Fetch data
 python src/fetch_data.py
 Build dataset
@@ -75,7 +76,7 @@ Predict a race
 python src/predict_race.py
 
 🔁 Weekly workflow
-
+```text
 After qualifying:
 
 python src/predict_race.py
