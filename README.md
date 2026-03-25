@@ -39,16 +39,13 @@ python -m venv .venv
 pip install -r requirements.txt
 
 ## ▶️ Usage
-Fetch data
+Fetch data:
 python src/fetch_data.py
-
-Build dataset
+Build dataset:
 python src/build_dataset.py
-
-Train model
+Train model:
 python src/train_model.py
-
-Predict a race
+Predict a race:
 python src/predict_race.py
 
 ## 🔁 Weekly workflow
@@ -60,7 +57,9 @@ python src/predict_race.py
 After race:
 
 python src/fetch_data.py
+
 python src/build_dataset.py
+
 python src/train_model.py
 
 ## 📁 Project Structure
