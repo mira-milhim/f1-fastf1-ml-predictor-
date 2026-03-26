@@ -94,8 +94,7 @@ f1_predictor/
 │   ├── fetch_data.py
 │   ├── build_dataset.py
 │   ├── train_model.py
-│   ├── predict_race.py
-│   └── weekly_update.py
+│   └── predict_race.py
 │
 ├── requirements.txt
 └── README.md
