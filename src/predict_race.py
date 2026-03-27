@@ -98,6 +98,19 @@ def main():
 
     print(f"\n🏁 Predicted Results for {event_name} {year} 🏁\n")
 
+    # Podium first
+    print("🏆 Expected Podium 🏆\n")
+    medals = ["🥇", "🥈", "🥉"]
+
+    for i, (_, row) in enumerate(pred_df.head(3).iterrows()):
+        driver = row["driver"]
+        team = row["team"]
+        score = round(row["predicted_finish"], 2)
+        print(f"{medals[i]} {driver} ({team}) → {score}")
+
+    # Full results
+    print("\n📊 Full Predicted Grid\n")
+
     for _, row in pred_df.iterrows():
         rank = int(row["predicted_rank"])
         driver = row["driver"]
@@ -116,14 +129,6 @@ def main():
             emoji = "📉"
 
         print(f"{emoji} P{rank:02d} | {driver} ({team}) → {score}")
-
-    print("\n🏆 Expected Podium 🏆\n")
-    medals = ["🥇", "🥈", "🥉"]
-
-    for i, (_, row) in enumerate(pred_df.head(3).iterrows()):
-        driver = row["driver"]
-        team = row["team"]
-        print(f"{medals[i]} {driver} ({team})")
 
     print("\n⚡ Model Insight: Lower score = better expected finish\n")
 
